@@ -1,29 +1,29 @@
 import json
 from datetime import datetime
-
+import config
 registro = []
 inventario = []
 
 def cargar_datos():
     global registro, inventario
     try:
-        with open("producto_registros.json", "r") as f:
+        with open(config.ruta_absoluta/"producto_registros.json", "r") as f:
             registro = json.load(f)
     except FileNotFoundError:
         registro = []
 
     try:
-        with open("movimientos.json", "r") as f:
+        with open(config.ruta_absoluta/"movimientos.json", "r") as f:
             inventario = json.load(f)
     except FileNotFoundError:
         inventario = []
 
 def json_registro():
-    with open("producto_registros.json", "w") as archivo:
+    with open(config.ruta_absoluta/"producto_registros.json", "w") as archivo:
         json.dump(registro, archivo, indent=4)
 
 def json_movimientos():
-    with open("movimientos.json", "w") as archivo:
+    with open(config.ruta_absoluta/"movimientos.json", "w") as archivo:
         json.dump(inventario, archivo, indent=4)
 
 def buscar_producto_por_codigo(codigo):

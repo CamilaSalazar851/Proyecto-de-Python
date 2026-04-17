@@ -1,0 +1,12 @@
+[
+    {
+        "codigo": "13",
+        "nombre": "papa",
+        "proveedor": "cami",
+        "bodegas": {
+            "Norte": 20,
+            "Centro": 0,
+            "Oriente": 0
+        }
+    }
+]
